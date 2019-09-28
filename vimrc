@@ -1,7 +1,7 @@
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'benmills/vimux'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
