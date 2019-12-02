@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# To delete a URL that was accidentally added, use something like
+#
+#   $ git remote set-url --delete --push origin git@github.com:dradtke/.git
+#
+
+if [[ $# -ne 1 ]]; then
+	echo "usage: git push-to <github|sourcehut>"
+	exit 1
+fi
+
+name="$(basename "$(pwd)")"
+case "$1" in
+	github) url="git@github.com:dradtke/${name}.git" ;;
+	sourcehut) url="git@git.sr.ht:~damien/${name}" ;;
+	*) echo "unknown remote: $1"; exit 2 ;;
+esac
+
+echo "Adding push url: ${url}"
+git remote set-url --add --push origin "${url}"
