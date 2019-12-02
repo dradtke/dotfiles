@@ -1,5 +1,6 @@
 [user]
-  email = me@damienradtke.com
+  name = Damien Radtke
+  email = git@damienradtke.com
 [color]
   ui = auto
 [alias]
@@ -27,26 +28,6 @@
 
   # show difference between working tree and the index
   unstaged = diff
-  branchage = "!for i in $(git branch | perl -pe s/^..//); do echo $(git show --pretty=format:'%Cgreen%ci %Cblue%cr %Creset' $i | head -n 1)'\t'$i; done"
-
-  # show list of conflicted files
-  difflist = diff --name-only --diff-filter=U
-
-  pile = stash --include-untracked
-
-  latest-release-sand = "!git tag | sort -V | grep -E '^[0-9]{3}.[0-9]rc[0-9]$' | tail -n 1"
-  latest-release-prod = "!git tag | sort -V | grep -E '^[0-9]{3}.[0-9]$' | tail -n 1"
-  commits-since-latest-release = "!bash -x -c \"git co master; git pull; git log --oneline $(git latest-release-prod)..; git co -\""
-
-  # git-duet aliases (must have https://github.com/git-duet/git-duet installed)
-  dci = duet-commit
-  drv = duet-revert
-  dmg = duet-merge
-  drb = rebase -i --exec 'git duet-commit --amend'
-
-  # git notes are not automatically pushed or pulled
-  fetch-notes = fetch origin refs/notes/*:refs/notes/*
-  push-notes = push origin refs/notes/*
 [alias "push"]
   please = push --force-with-lease
 [push]
@@ -58,5 +39,3 @@
   excludesfile = ~/.gitignore
 [grep]
   lineNumber = true
-[include]
-  path = ~/.local.gitconfig
