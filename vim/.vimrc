@@ -17,6 +17,7 @@ set nu
 nmap <Leader>ff :FZF<cr>
 nmap <Leader>nt :NERDTreeToggle<cr>
 nmap <Leader>nf :NERDTreeFind<cr>
+nmap <Leader>nh :set nohls<cr>
 
 au filetype go nmap <Leader>tt :GoTest!<cr>
 au filetype go nmap <Leader>tf :GoTestFunc!<cr>
