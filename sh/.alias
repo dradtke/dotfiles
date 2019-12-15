@@ -1,0 +1,4 @@
+#!/bin/sh
+
+alias nvim=/opt/nvim.appimage
+alias neovim=/opt/nvim.appimage
